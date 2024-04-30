@@ -1,21 +1,23 @@
 from DBAccess import DBAccess
 from TicketManager import TicketManager
-db_access = DBAccess("report", "xVftpqiQyDssntxra", "pmsyglpi.byu.edu", 3306, "glpi")
-db_access.connect()
+from TonerAnalyzer import TonerAnalyzer
+import json
 
-#print a table of the first 10 rows of the glpi_tickets table
 
-cursor = db_access.conn.cursor()
-'''cursor.execute("SELECT * FROM glpi_tickets LIMIT 10")
-rows = cursor.fetchall()
+class Manager:
+    def __init__(self):
+        self.db_access = DBAccess("report", "xVftpqiQyDssntxra", "pmsyglpi.byu.edu", 3306, "glpi")
+        self.db_access.connect()
+        self.ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")
+        self.toner_analyzer = TonerAnalyzer()
 
-print("id | entities_id | name | date")
-print("-------------------------------")
-for row in rows:
-    print(row[0], "|", row[1], "|", row[2], "|", row[3])
-
-cursor.close()'''
-
-#ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")
-#print(ticket_manager.get_session_token())
-
+    def get_session_token(self):
+        return self.ticket_manager.get_session_token()
+    
+    def get_low_toners(self):
+        cartridge_levels = self.toner_analyzer.get_toner_levels()
+        return self.toner_analyzer.find_low_toners(cartridge_levels)
+    
+    def create_tickets(self, session_token, low_toners):
+        for toner in low_toners:
+            ticket_name = toner.get_color() + " Toner Low at: " + "location" #fix this

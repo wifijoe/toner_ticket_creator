@@ -1,0 +1,1827 @@
+{
+    "common": {
+        "name": "Characteristics"
+    },
+    "1": {
+        "name": "Title",
+        "table": "glpi_tickets",
+        "field": "name",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.name"
+    },
+    "21": {
+        "name": "Description",
+        "table": "glpi_tickets",
+        "field": "content",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.content"
+    },
+    "2": {
+        "name": "ID",
+        "table": "glpi_tickets",
+        "field": "id",
+        "datatype": "number",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.id"
+    },
+    "12": {
+        "name": "Status",
+        "table": "glpi_tickets",
+        "field": "status",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.status"
+    },
+    "10": {
+        "name": "Urgency",
+        "table": "glpi_tickets",
+        "field": "urgency",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.urgency"
+    },
+    "11": {
+        "name": "Impact",
+        "table": "glpi_tickets",
+        "field": "impact",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.impact"
+    },
+    "3": {
+        "name": "Priority",
+        "table": "glpi_tickets",
+        "field": "priority",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.priority"
+    },
+    "15": {
+        "name": "Opening Date",
+        "table": "glpi_tickets",
+        "field": "date",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.date"
+    },
+    "16": {
+        "name": "Closing Date",
+        "table": "glpi_tickets",
+        "field": "closedate",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.closedate"
+    },
+    "18": {
+        "name": "Time to Resolve",
+        "table": "glpi_tickets",
+        "field": "time_to_resolve",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.time_to_resolve"
+    },
+    "151": {
+        "name": "Time to Resolve + Progress",
+        "table": "glpi_tickets",
+        "field": "time_to_resolve",
+        "datatype": "",
+        "nosearch": true,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.time_to_resolve"
+    },
+    "82": {
+        "name": "Time to resolve exceeded",
+        "table": "glpi_tickets",
+        "field": "is_late",
+        "datatype": "bool",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.is_late"
+    },
+    "17": {
+        "name": "Resolution Date",
+        "table": "glpi_tickets",
+        "field": "solvedate",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.solvedate"
+    },
+    "19": {
+        "name": "Last Update",
+        "table": "glpi_tickets",
+        "field": "date_mod",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.date_mod"
+    },
+    "7": {
+        "name": "Category",
+        "table": "glpi_itilcategories",
+        "field": "completename",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.ITILCategory.completename"
+    },
+    "80": {
+        "name": "Entity",
+        "table": "glpi_entities",
+        "field": "completename",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.Entity.completename"
+    },
+    "45": {
+        "name": "Total Duration",
+        "table": "glpi_tickets",
+        "field": "actiontime",
+        "datatype": "timestamp",
+        "nosearch": true,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.actiontime"
+    },
+    "64": {
+        "name": "Last edit by",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.users_id_lastupdater.User.name"
+    },
+    "142": {
+        "name": "Documents",
+        "table": "glpi_documents",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": true,
+        "nodisplay": true,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Document_Item.Document.name"
+    },
+    "400": {
+        "name": "Pending reason",
+        "table": "glpi_pendingreasons",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.PendingReason_Item.PendingReason.name"
+    },
+    "83": {
+        "name": "Locations",
+        "table": "glpi_locations",
+        "field": "completename",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.Location.completename"
+    },
+    "101": {
+        "name": "Address",
+        "table": "glpi_locations",
+        "field": "address",
+        "datatype": "string",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.address"
+    },
+    "102": {
+        "name": "Zip Code",
+        "table": "glpi_locations",
+        "field": "postcode",
+        "datatype": "string",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.postcode"
+    },
+    "103": {
+        "name": "Town",
+        "table": "glpi_locations",
+        "field": "town",
+        "datatype": "string",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.town"
+    },
+    "104": {
+        "name": "State",
+        "table": "glpi_locations",
+        "field": "state",
+        "datatype": "string",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.state"
+    },
+    "105": {
+        "name": "Country",
+        "table": "glpi_locations",
+        "field": "country",
+        "datatype": "string",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.country"
+    },
+    "84": {
+        "name": "Building Number",
+        "table": "glpi_locations",
+        "field": "building",
+        "datatype": "string",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.building"
+    },
+    "85": {
+        "name": "Room Number",
+        "table": "glpi_locations",
+        "field": "room",
+        "datatype": "string",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.room"
+    },
+    "86": {
+        "name": "Location Comments",
+        "table": "glpi_locations",
+        "field": "comment",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.comment"
+    },
+    "998": {
+        "name": "Latitude",
+        "table": "glpi_locations",
+        "field": "latitude",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.latitude"
+    },
+    "999": {
+        "name": "Longitude",
+        "table": "glpi_locations",
+        "field": "longitude",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Location.longitude"
+    },
+    "450": {
+        "name": "Project",
+        "table": "glpi_projects",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Itil_Project.Project.name"
+    },
+    "155": {
+        "name": "Time to Own",
+        "table": "glpi_tickets",
+        "field": "time_to_own",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.time_to_own"
+    },
+    "158": {
+        "name": "Time to Own + Progress",
+        "table": "glpi_tickets",
+        "field": "time_to_own",
+        "datatype": "",
+        "nosearch": true,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.time_to_own"
+    },
+    "159": {
+        "name": "Time to own exceeded",
+        "table": "glpi_tickets",
+        "field": "is_late",
+        "datatype": "bool",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.is_late"
+    },
+    "180": {
+        "name": "Internal time to resolve",
+        "table": "glpi_tickets",
+        "field": "internal_time_to_resolve",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.internal_time_to_resolve"
+    },
+    "181": {
+        "name": "Internal time to resolve + Progress",
+        "table": "glpi_tickets",
+        "field": "internal_time_to_resolve",
+        "datatype": "",
+        "nosearch": true,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.internal_time_to_resolve"
+    },
+    "182": {
+        "name": "Internal time to resolve exceeded",
+        "table": "glpi_tickets",
+        "field": "is_late",
+        "datatype": "bool",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.is_late"
+    },
+    "185": {
+        "name": "Internal time to own",
+        "table": "glpi_tickets",
+        "field": "internal_time_to_own",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.internal_time_to_own"
+    },
+    "186": {
+        "name": "Internal time to own + Progress",
+        "table": "glpi_tickets",
+        "field": "internal_time_to_own",
+        "datatype": "",
+        "nosearch": true,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.internal_time_to_own"
+    },
+    "187": {
+        "name": "Internal time to own exceeded",
+        "table": "glpi_tickets",
+        "field": "is_late",
+        "datatype": "bool",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.is_late"
+    },
+    "188": {
+        "name": "Next escalation level",
+        "table": "glpi_tickets",
+        "field": "next_escalation_level",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.next_escalation_level"
+    },
+    "14": {
+        "name": "Type",
+        "table": "glpi_tickets",
+        "field": "type",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.type"
+    },
+    "13": {
+        "name": "Associated Elements",
+        "table": "glpi_items_tickets",
+        "field": "items_id",
+        "datatype": "specific",
+        "nosearch": true,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Item_Ticket.items_id"
+    },
+    "131": {
+        "name": "Associated item types",
+        "table": "glpi_items_tickets",
+        "field": "itemtype",
+        "datatype": "itemtypename",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Item_Ticket.itemtype"
+    },
+    "9": {
+        "name": "Request Sources",
+        "table": "glpi_requesttypes",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.RequestType.name"
+    },
+    "requester": {
+        "name": "Requester"
+    },
+    "4": {
+        "name": "Requester",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Ticket_User.User.name"
+    },
+    "71": {
+        "name": "Requester Group",
+        "table": "glpi_groups",
+        "field": "completename",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.Group_Ticket.Group.completename"
+    },
+    "22": {
+        "name": "Writer",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.users_id_recipient.User.name"
+    },
+    "observer": {
+        "name": "Watcher"
+    },
+    "66": {
+        "name": "Watcher",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Ticket_User.User.name"
+    },
+    "65": {
+        "name": "Watcher Group",
+        "table": "glpi_groups",
+        "field": "completename",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.Group_Ticket.Group.completename"
+    },
+    "assign": {
+        "name": "Assigned To"
+    },
+    "5": {
+        "name": "Technician",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Ticket_User.User.name"
+    },
+    "6": {
+        "name": "Assigned to a Supplier",
+        "table": "glpi_suppliers",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Supplier_Ticket.Supplier.name"
+    },
+    "8": {
+        "name": "Technician Group",
+        "table": "glpi_groups",
+        "field": "completename",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.Group_Ticket.Group.completename"
+    },
+    "notification": {
+        "name": "Notifications"
+    },
+    "35": {
+        "name": "Email Followup",
+        "table": "glpi_tickets_users",
+        "field": "use_notification",
+        "datatype": "bool",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_User.use_notification"
+    },
+    "34": {
+        "name": "Email for Followup",
+        "table": "glpi_tickets_users",
+        "field": "alternative_email",
+        "datatype": "email",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_User.alternative_email"
+    },
+    "sla": {
+        "name": "SLA"
+    },
+    "37": {
+        "name": "SLA Time to Own",
+        "table": "glpi_slas",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.SLA.name"
+    },
+    "30": {
+        "name": "SLA Time to Resolve",
+        "table": "glpi_slas",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.SLA.name"
+    },
+    "32": {
+        "name": "SLA Escalation Level",
+        "table": "glpi_slalevels",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.SlaLevel_Ticket.SlaLevel.name"
+    },
+    "ola": {
+        "name": "OLA"
+    },
+    "190": {
+        "name": "OLA Internal time to own",
+        "table": "glpi_olas",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.OLA.name"
+    },
+    "191": {
+        "name": "OLA Internal time to resolve",
+        "table": "glpi_olas",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.OLA.name"
+    },
+    "192": {
+        "name": "OLA Escalation Level",
+        "table": "glpi_olalevels",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.OlaLevel_Ticket.OlaLevel.name"
+    },
+    "validation": {
+        "name": "Approvals"
+    },
+    "51": {
+        "name": "Minimum validation required",
+        "table": "glpi_tickets",
+        "field": "validation_percent",
+        "datatype": "number",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.validation_percent"
+    },
+    "52": {
+        "name": "Approvals",
+        "table": "glpi_tickets",
+        "field": "global_validation",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.global_validation"
+    },
+    "53": {
+        "name": "Request Comments",
+        "table": "glpi_ticketvalidations",
+        "field": "comment_submission",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketValidation.comment_submission"
+    },
+    "54": {
+        "name": "Approval comments",
+        "table": "glpi_ticketvalidations",
+        "field": "comment_validation",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketValidation.comment_validation"
+    },
+    "55": {
+        "name": "Approval Status",
+        "table": "glpi_ticketvalidations",
+        "field": "status",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.TicketValidation.status"
+    },
+    "56": {
+        "name": "Request Date",
+        "table": "glpi_ticketvalidations",
+        "field": "submission_date",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketValidation.submission_date"
+    },
+    "57": {
+        "name": "Approval Date",
+        "table": "glpi_ticketvalidations",
+        "field": "validation_date",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketValidation.validation_date"
+    },
+    "58": {
+        "name": "Requester",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.TicketValidation.User.name"
+    },
+    "59": {
+        "name": "Approver",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.users_id_validate.TicketValidation.User.name"
+    },
+    "satisfaction": {
+        "name": "Satisfaction Survey"
+    },
+    "31": {
+        "name": "Type",
+        "table": "glpi_ticketsatisfactions",
+        "field": "type",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.TicketSatisfaction.type"
+    },
+    "60": {
+        "name": "Creation Date",
+        "table": "glpi_ticketsatisfactions",
+        "field": "date_begin",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketSatisfaction.date_begin"
+    },
+    "61": {
+        "name": "Response Date",
+        "table": "glpi_ticketsatisfactions",
+        "field": "date_answered",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketSatisfaction.date_answered"
+    },
+    "62": {
+        "name": "Satisfaction",
+        "table": "glpi_ticketsatisfactions",
+        "field": "satisfaction",
+        "datatype": "number",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketSatisfaction.satisfaction"
+    },
+    "63": {
+        "name": "Comments",
+        "table": "glpi_ticketsatisfactions",
+        "field": "comment",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketSatisfaction.comment"
+    },
+    "followup": {
+        "name": "Followups"
+    },
+    "25": {
+        "name": "Description",
+        "table": "glpi_itilfollowups",
+        "field": "content",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.ITILFollowup.content"
+    },
+    "36": {
+        "name": "Date",
+        "table": "glpi_itilfollowups",
+        "field": "date",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.ITILFollowup.date"
+    },
+    "27": {
+        "name": "Number of Followups",
+        "table": "glpi_itilfollowups",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.ITILFollowup.id"
+    },
+    "29": {
+        "name": "Request Sources",
+        "table": "glpi_requesttypes",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.ITILFollowup.RequestType.name"
+    },
+    "91": {
+        "name": "Private Followup",
+        "table": "glpi_itilfollowups",
+        "field": "is_private",
+        "datatype": "bool",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.ITILFollowup.is_private"
+    },
+    "93": {
+        "name": "Writer",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.ITILFollowup.User.name"
+    },
+    "task": {
+        "name": "Tasks"
+    },
+    "26": {
+        "name": "Description",
+        "table": "glpi_tickettasks",
+        "field": "content",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketTask.content"
+    },
+    "28": {
+        "name": "Number of Tasks",
+        "table": "glpi_tickettasks",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketTask.id"
+    },
+    "20": {
+        "name": "Category",
+        "table": "glpi_taskcategories",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.TicketTask.TaskCategory.name"
+    },
+    "92": {
+        "name": "Private Task",
+        "table": "glpi_tickettasks",
+        "field": "is_private",
+        "datatype": "bool",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketTask.is_private"
+    },
+    "94": {
+        "name": "Writer",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.TicketTask.User.name"
+    },
+    "95": {
+        "name": "Technician in Charge",
+        "table": "glpi_users",
+        "field": "name",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.users_id_tech.TicketTask.User.name"
+    },
+    "112": {
+        "name": "Group in Charge",
+        "table": "glpi_groups",
+        "field": "completename",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals",
+            "under",
+            "notunder"
+        ],
+        "uid": "Ticket.groups_id_tech.TicketTask.Group.completename"
+    },
+    "96": {
+        "name": "Duration",
+        "table": "glpi_tickettasks",
+        "field": "actiontime",
+        "datatype": "timestamp",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketTask.actiontime"
+    },
+    "97": {
+        "name": "Date",
+        "table": "glpi_tickettasks",
+        "field": "date",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketTask.date"
+    },
+    "33": {
+        "name": "Status",
+        "table": "glpi_tickettasks",
+        "field": "state",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.TicketTask.state"
+    },
+    "173": {
+        "name": "Begin Date",
+        "table": "glpi_tickettasks",
+        "field": "begin",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketTask.begin"
+    },
+    "174": {
+        "name": "End date",
+        "table": "glpi_tickettasks",
+        "field": "end",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketTask.end"
+    },
+    "175": {
+        "name": "Task Template",
+        "table": "glpi_tasktemplates",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.TicketTask.TaskTemplate.name"
+    },
+    "stats": {
+        "name": "Statistics"
+    },
+    "154": {
+        "name": "Resolution Time",
+        "table": "glpi_tickets",
+        "field": "solve_delay_stat",
+        "datatype": "timestamp",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.solve_delay_stat"
+    },
+    "152": {
+        "name": "Closing Time",
+        "table": "glpi_tickets",
+        "field": "close_delay_stat",
+        "datatype": "timestamp",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.close_delay_stat"
+    },
+    "153": {
+        "name": "Waiting Time",
+        "table": "glpi_tickets",
+        "field": "waiting_duration",
+        "datatype": "timestamp",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.waiting_duration"
+    },
+    "150": {
+        "name": "Take into Account Time",
+        "table": "glpi_tickets",
+        "field": "takeintoaccount_delay_stat",
+        "datatype": "timestamp",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.takeintoaccount_delay_stat"
+    },
+    "linktickets": {
+        "name": "Linked tickets"
+    },
+    "40": {
+        "name": "All Linked Tickets",
+        "table": "glpi_tickets_tickets",
+        "field": "tickets_id_1",
+        "datatype": "",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.Ticket_Ticket.tickets_id_1"
+    },
+    "47": {
+        "name": "Duplicated Tickets",
+        "table": "glpi_tickets_tickets",
+        "field": "tickets_id_1",
+        "datatype": "",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.Ticket_Ticket.tickets_id_1"
+    },
+    "41": {
+        "name": "Number of All Linked Tickets",
+        "table": "glpi_tickets_tickets",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_Ticket.id"
+    },
+    "46": {
+        "name": "Number of Duplicated Tickets",
+        "table": "glpi_tickets_tickets",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_Ticket.id"
+    },
+    "50": {
+        "name": "Parent tickets",
+        "table": "glpi_tickets",
+        "field": "id",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.tickets_id_2.Ticket_Ticket.Ticket.id"
+    },
+    "67": {
+        "name": "Child tickets",
+        "table": "glpi_tickets",
+        "field": "id",
+        "datatype": "itemlink",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.tickets_id_1.Ticket_Ticket.Ticket.id"
+    },
+    "68": {
+        "name": "Number of sons tickets",
+        "table": "glpi_tickets_tickets",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_Ticket.id"
+    },
+    "69": {
+        "name": "Number of parent tickets",
+        "table": "glpi_tickets_tickets",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_Ticket.id"
+    },
+    "solution": {
+        "name": "Solutions"
+    },
+    "23": {
+        "name": "Solution Types",
+        "table": "glpi_solutiontypes",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.ITILSolution.SolutionType.name"
+    },
+    "24": {
+        "name": "Solutions",
+        "table": "glpi_itilsolutions",
+        "field": "content",
+        "datatype": "text",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.ITILSolution.content"
+    },
+    "38": {
+        "name": "Any solution status",
+        "table": "glpi_itilsolutions",
+        "field": "status",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.ITILSolution.status"
+    },
+    "39": {
+        "name": "Last solution status",
+        "table": "glpi_itilsolutions",
+        "field": "status",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.ITILSolution.status"
+    },
+    "cost": {
+        "name": "Costs"
+    },
+    "48": {
+        "name": "Total Cost",
+        "table": "glpi_ticketcosts",
+        "field": "totalcost",
+        "datatype": "decimal",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketCost.totalcost"
+    },
+    "42": {
+        "name": "Time Cost",
+        "table": "glpi_ticketcosts",
+        "field": "cost_time",
+        "datatype": "decimal",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketCost.cost_time"
+    },
+    "49": {
+        "name": "Costs - Duration",
+        "table": "glpi_ticketcosts",
+        "field": "actiontime",
+        "datatype": "timestamp",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketCost.actiontime"
+    },
+    "43": {
+        "name": "Fixed Cost",
+        "table": "glpi_ticketcosts",
+        "field": "cost_fixed",
+        "datatype": "decimal",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketCost.cost_fixed"
+    },
+    "44": {
+        "name": "Material Cost",
+        "table": "glpi_ticketcosts",
+        "field": "cost_material",
+        "datatype": "decimal",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.TicketCost.cost_material"
+    },
+    "problem": {
+        "name": "Problems"
+    },
+    "200": {
+        "name": "Number of Problems",
+        "table": "glpi_problems_tickets",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Problem_Ticket.id"
+    },
+    "201": {
+        "name": "Problems",
+        "table": "glpi_problems",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains",
+            "equals",
+            "notequals"
+        ],
+        "uid": "Ticket.Problem_Ticket.Problem.name"
+    },
+    "202": {
+        "name": "Status",
+        "table": "glpi_problems",
+        "field": "status",
+        "datatype": "specific",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals"
+        ],
+        "uid": "Ticket.Problem_Ticket.Problem.status"
+    },
+    "203": {
+        "name": "Resolution Date",
+        "table": "glpi_problems",
+        "field": "solvedate",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Problem_Ticket.Problem.solvedate"
+    },
+    "204": {
+        "name": "Opening Date",
+        "table": "glpi_problems",
+        "field": "date",
+        "datatype": "datetime",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "notequals",
+            "lessthan",
+            "morethan",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Problem_Ticket.Problem.date"
+    },
+    "tools": {
+        "name": "Tools"
+    },
+    "193": {
+        "name": "Contract",
+        "table": "glpi_contracts",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_Contract.Contract.name"
+    },
+    "194": {
+        "name": "Contract Types",
+        "table": "glpi_contracttypes",
+        "field": "name",
+        "datatype": "dropdown",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "equals",
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Ticket_Contract.Contract.ContractType.name"
+    },
+    "document": {
+        "name": "Documents"
+    },
+    "119": {
+        "name": "Number of documents",
+        "table": "glpi_documents_items",
+        "field": "id",
+        "datatype": "count",
+        "nosearch": false,
+        "nodisplay": false,
+        "available_searchtypes": [
+            "contains",
+            "notcontains"
+        ],
+        "uid": "Ticket.Document_Item.id"
+    }
+}
