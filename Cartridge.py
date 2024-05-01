@@ -20,3 +20,6 @@ class Cartridge:
             return "Yellow"
         else:
             return "unknown"
+        
+    def get_level(self):
+        return int(self.level)

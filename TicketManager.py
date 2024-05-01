@@ -26,9 +26,11 @@ class TicketManager:
         response = requests.get(url, headers=headers)
         return response.json()
     
-    #calls search endpoint to check if an open ticket for toner already exists
-    def search_tickets(self, session_token, ticket_name):
-        print(session_token)
+    #Params: session_token, toner_color, location
+    #Returns: JSON response
+    #Searches for tickets with the given toner color and location
+    def search_tickets(self, session_token, toner_color, location):
+
         headers = {
             "Session-Token": session_token,
             "App-Token": self.app_token
@@ -43,11 +45,40 @@ class TicketManager:
             'criteria[1][link]': 'AND',
             'criteria[1][field]': '1',
             'criteria[1][searchtype]': 'contains',
-            'criteria[1][value]': ticket_name
+            'criteria[1][value]': toner_color,
+            'criteria[2][link]': 'AND',
+            'criteria[2][field]': '83',
+            'criteria[2][searchtype]': 'contains',
+            'criteria[2][value]': location
         }
 
-        response = requests.get(url, headers=headers, params=params)
-        print("printed")
-        return response.content
+
+
+        response = requests.get(url, headers=headers, params=params) 
+        return response.json()
+    
+    def create_ticket(self, session_token, ticket_name, ticket_description):
+        headers = {
+            "Session-Token": session_token,
+            "App-Token": self.app_token
+        }
+        url = self.url + "/Ticket"
+
+        data = {
+            "input": {
+                "name": ticket_name,
+                "content": ticket_description,
+                "status": 1
+            }
+        }
+
+        response = requests.post(url, headers=headers, json=data)
+        return response.json()
+    
+
+#test TicketManager
+'''ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")  
+session_token = ticket_manager.get_session_token() 
+print(ticket_manager.search_tickets(session_token, "Black", "TNRB > 2nd Flr Atrium"))'''
 
         
