@@ -20,7 +20,47 @@ class Manager:
     
     def create_tickets(self, session_token, low_toners):
         for toner in low_toners:
+            ticket_exists = False
             ticket_name = toner.get_color() + " Toner Low at: " + toner.location
+            colors = []
+            if toner.get_color() == "Black":
+                colors.append("k toner")
+                colors.append("toner k")
+                colors.append("toner black")
+                colors.append("black toner")
+                colors.append("black")
+            elif toner.get_color() == "Cyan":
+                colors.append("n toner")
+                colors.append("toner c")
+                colors.append("toner cyan")
+                colors.append("cyan toner")
+                colors.append("cyan")
+            elif toner.get_color() == "Magenta":
+                colors.append("a toner")
+                colors.append("toner m")
+                colors.append("toner magenta")
+                colors.append("magenta toner")
+                colors.append("magenta")
+            elif toner.get_color() == "Yellow":
+                colors.append("w toner")
+                colors.append("toner y")
+                colors.append("toner yellow")
+                colors.append("yellow toner")
+                colors.append("yellow")
+
+            for color in colors:
+                print(color + " " + toner.location)
+                response = self.ticket_manager.search_tickets(session_token, color, toner.location)
+                if response["totalcount"] > 0:
+                    print(response)
+                    for ticket in response["data"]:
+                        if ticket['13'] == toner.printer_id:
+                            print("Ticket already exists for: " + ticket_name)
+                            ticket_exists = True
+                            break
+
+            if ticket_exists:
+                continue
 
             #check if ticket already exists
             response = self.ticket_manager.search_tickets(session_token, toner.get_color(), toner.location)

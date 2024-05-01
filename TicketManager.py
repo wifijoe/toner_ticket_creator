@@ -77,8 +77,8 @@ class TicketManager:
     
 
 #test TicketManager
-'''ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")  
+ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")  
 session_token = ticket_manager.get_session_token() 
-print(ticket_manager.search_tickets(session_token, "Black", "TNRB > 2nd Flr Atrium"))'''
+print(ticket_manager.search_tickets(session_token, "jam", "BNSN"))
 
         
