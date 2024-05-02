@@ -65,22 +65,26 @@ class Manager:
                 if ticket_exists is False:
                     #print(color + " " + toner.location)
                     response = self.ticket_manager.search_tickets(session_token, color, toner.location)
+                    response2 = self.ticket_manager.search_closed_tickets(session_token, color, toner.location, self.ticket_manager.get_time_string(5))
                     if response["totalcount"] > 0:
-                        print(response)
                         for ticket in response["data"]:
-                            print(ticket['13'])
+                            if int(ticket['13']) == int(toner.printer_id):
+                                print("Ticket already exists for: " + ticket_name)
+                                ticket_exists = True
+                                break  
+                    if response2["totalcount"] > 0:
+                        for ticket in response["data"]:
                             if int(ticket['13']) == int(toner.printer_id):
                                 print("Ticket already exists for: " + ticket_name)
                                 ticket_exists = True
                                 break
-            print(ticket_exists)
+
             if ticket_exists:
-                print("skipping")
                 continue
 
             if toner.get_level() <= 10 and toner.get_level() > 5:
                 print(toner.get_color() + " Toner at " + toner.location + " is at " + str(toner.level) + "%")
-                print("Ticket will be created when toner level reaches 5% or lower.")
+                print("Ticket will be created when toner level reaches 5% or lower.\n")
                 
             elif toner.get_level() <= 5:
                 ticket_description = toner.get_color() + " at " + toner.location + " is at " + str(toner.level) + "% <p> </p> <p><em>This ticket was created automatically</em></p>"
@@ -90,7 +94,7 @@ class Manager:
 
                 self.ticket_manager.link_ticket(session_token, ticket_id, toner.printer_id)
                 self.ticket_manager.link_to_group(session_token, ticket_id, 2)
-                print("Ticket created for: " + ticket_name)
+                print("Ticket created for: " + ticket_name + "\n")
                 print(json.dumps(response, indent=4))
                 print(ticket_description)
 
