@@ -1,4 +1,5 @@
 import requests
+import time
 class TicketManager:
     def __init__(self, auth_token, app_token, url):
         self.auth_token = auth_token
@@ -61,6 +62,43 @@ class TicketManager:
 
         response = requests.get(url, headers=headers, params=params) 
         return response.json()
+    
+    def search_closed_tickets(self, session_token, toner_color, location, solve_date):
+
+        headers = {
+            "Session-Token": session_token,
+            "App-Token": self.app_token
+        }
+        url = self.url + "/search/Ticket"
+
+        params = {
+            'is_deleted': '0',
+            'criteria[0][field]': '17',
+            'criteria[0][searchtype]': 'morethan',
+            'criteria[0][value]': solve_date,
+            'criteria[1][link]': 'AND',
+            'criteria[1][field]': '1',
+            'criteria[1][searchtype]': 'contains',
+            'criteria[1][value]': toner_color,
+            'criteria[2][link]': 'AND',
+            'criteria[2][field]': '83',
+            'criteria[2][searchtype]': 'contains',
+            'criteria[2][value]': location,
+            'criteria[3][link]': 'AND',
+            'criteria[3][field]': '7',
+            'criteria[3][searchtype]': 'contains',
+            'criteria[3][value]': 'Needs Supplies',
+
+        }
+
+
+
+        response = requests.get(url, headers=headers, params=params) 
+        return response.json()
+    
+    def get_time_string(self, days_ago):
+        #return time.strftime("%Y-%m-%d %H:%M:%S")
+        return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(time.time() - 60*60*24*days_ago))
     
     def create_ticket(self, session_token, ticket_name, ticket_description, location_id, printer_id):
         headers = {
@@ -125,8 +163,10 @@ class TicketManager:
 #test TicketManager
 ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")  
 session_token = ticket_manager.get_session_token()
-print(ticket_manager.search_tickets(session_token, "Yellow", "CANC"))
+#print(ticket_manager.search_tickets(session_token, "Yellow", "CANC"))
 #print(ticket_manager.create_ticket(session_token, "Test Ticket", "This is a test ticket", 1, 1))
 #print(ticket_manager.link_ticket(session_token, 784, 9))
+
+print(ticket_manager.search_closed_tickets(session_token, "Yellow", "CANC", ticket_manager.get_time_string(7)))
 
         
