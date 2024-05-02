@@ -19,3 +19,18 @@ class DBAccess:
             )
         except mariadb.Error as e:
             print(f"Error connecting to MariaDB Platform: {e}")
+
+    
+    def get_location_id(self, complete_name):
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT id FROM glpi_locations WHERE completename = '" + complete_name + "'")
+        rows = cursor.fetchall()
+        if len(rows) == 0:
+            print("Error: Location not found for: " + complete_name)
+            return None
+        elif len(rows) > 1:
+            print("Error: Multiple locations found for: " + complete_name)
+            return None
+        else:
+            return rows[0][0]
+

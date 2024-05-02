@@ -20,6 +20,8 @@ class Manager:
     
     def create_tickets(self, session_token, low_toners):
         for toner in low_toners:
+            print(toner)
+        for toner in low_toners:
             ticket_exists = False
             ticket_name = toner.get_color() + " Toner Low at: " + toner.location
             colors = []
@@ -49,43 +51,48 @@ class Manager:
                 colors.append("yellow")
 
             for color in colors:
-                print(color + " " + toner.location)
-                response = self.ticket_manager.search_tickets(session_token, color, toner.location)
-                if response["totalcount"] > 0:
-                    print(response)
-                    for ticket in response["data"]:
-                        if ticket['13'] == toner.printer_id:
-                            print("Ticket already exists for: " + ticket_name)
-                            ticket_exists = True
-                            break
-
+                if ticket_exists is False:
+                    #print(color + " " + toner.location)
+                    response = self.ticket_manager.search_tickets(session_token, color, toner.location)
+                    if response["totalcount"] > 0:
+                        print(response)
+                        for ticket in response["data"]:
+                            print(ticket['13'])
+                            if int(ticket['13']) == int(toner.printer_id):
+                                print("Ticket already exists for: " + ticket_name)
+                                ticket_exists = True
+                                break
+            print(ticket_exists)
             if ticket_exists:
+                print("skipping")
                 continue
-
-            #check if ticket already exists
-            response = self.ticket_manager.search_tickets(session_token, toner.get_color(), toner.location)
-            if response["totalcount"] > 0:
-                print("Ticket already exists for: " + ticket_name)
 
             if toner.get_level() <= 10 and toner.get_level() > 5:
                 print(toner.get_color() + " Toner at " + toner.location + " is at " + str(toner.level) + "%")
                 print("Ticket will be created when toner level reaches 5% or lower.")
                 
             elif toner.get_level() <= 5:
-                ticket_description = toner.get_color() + " at " + toner.location + " is at " + str(toner.level) + "%"
-                #response = self.ticket_manager.create_ticket(session_token, ticket_name, ticket_description)
+                ticket_description = toner.get_color() + " at " + toner.location + " is at " + str(toner.level) + "% <p> </p> <p><em>This ticket was created automatically</em></p>"
+                location_id = self.db_access.get_location_id(toner.location)
+                #response = self.ticket_manager.create_ticket(session_token, ticket_name, ticket_description, location_id, toner.printer_id)
+                #ticket_id = response["id"]
                 #if response status is in 200s, ticket was created successfully
-                #if response.status_code >= 200 and response.status_code < 300:
-                   # print("Ticket created for: " + ticket_name)
-                    #print(json.dumps(response, indent=4))
+
+                #self.ticket_manager.link_ticket(session_token, ticket_id, toner.printer_id)
+                #self.ticket_manager.link_to_group(session_token, ticket_id, 2)
                 print("Ticket created for: " + ticket_name)
+                #print(json.dumps(response, indent=4))
                 print(ticket_description)
 
+def run():
+    manager = Manager()
+    session_token = manager.get_session_token()
+    low_toners = manager.get_low_toners()
+    manager.create_tickets(session_token, low_toners)
 
-manager = Manager()
-session_token = manager.get_session_token()
-low_toners = manager.get_low_toners()
-manager.create_tickets(session_token, low_toners)
+
+if __name__ == "__main__":
+    run()
 
 
         
