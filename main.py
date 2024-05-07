@@ -12,7 +12,7 @@ sys.stdout = Logger()
 class Manager:
     def __init__(self):
         self.credentials = Credentials()
-        self.db_access = DBAccess(self.credentials.username, self.credentials.password, self.credentials.host, self.credentials.host, self.credentials.database)
+        self.db_access = DBAccess(self.credentials.username, self.credentials.password, self.credentials.host, self.credentials.port, self.credentials.database)
         self.db_access.connect()
         self.ticket_manager = TicketManager(self.credentials.auth, self.credentials.app_token, self.credentials.api_url)
         self.toner_analyzer = TonerAnalyzer()

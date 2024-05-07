@@ -5,7 +5,7 @@ from Credentials import Credentials
 class TonerAnalyzer:
     def __init__(self):
         self.credentials = Credentials()
-        self.db_access = DBAccess(self.credentials.username, self.credentials.password, self.credentials.host, self.credentials.host, self.credentials.database)
+        self.db_access = DBAccess(self.credentials.username, self.credentials.password, self.credentials.host, self.credentials.port, self.credentials.database)
         self.db_access.connect()
 
     def get_toner_levels(self):
