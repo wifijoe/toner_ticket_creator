@@ -2,6 +2,10 @@ from DBAccess import DBAccess
 from TicketManager import TicketManager
 from TonerAnalyzer import TonerAnalyzer
 import json
+import sys
+from Logger import Logger
+
+sys.stdout = Logger()
 
 
 class Manager:
@@ -21,7 +25,7 @@ class Manager:
     
     def exclude_printers(self, low_toners):
         #open blacklist.txt and read in the printer ids
-        with open("blacklist.txt", "r") as file:
+        with open("./options/blacklist.txt", "r") as file:
             for line in file:
                 self.blacklist.append(int(line))
     

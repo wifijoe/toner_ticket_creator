@@ -1,1 +1,4 @@
 165
+remove db credentials from github
+fix logs
+make it run continuously
