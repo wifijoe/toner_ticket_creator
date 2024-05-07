@@ -1,9 +1,11 @@
 from DBAccess import DBAccess
 from Cartridge import Cartridge
+from Credentials import Credentials
 
 class TonerAnalyzer:
     def __init__(self):
-        self.db_access = DBAccess("report", "xVftpqiQyDssntxra", "pmsyglpi.byu.edu", 3306, "glpi")
+        self.credentials = Credentials()
+        self.db_access = DBAccess(self.credentials.username, self.credentials.password, self.credentials.host, self.credentials.host, self.credentials.database)
         self.db_access.connect()
 
     def get_toner_levels(self):

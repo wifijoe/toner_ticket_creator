@@ -4,15 +4,17 @@ from TonerAnalyzer import TonerAnalyzer
 import json
 import sys
 from Logger import Logger
+from Credentials import Credentials
 
 sys.stdout = Logger()
 
 
 class Manager:
     def __init__(self):
-        self.db_access = DBAccess("report", "xVftpqiQyDssntxra", "pmsyglpi.byu.edu", 3306, "glpi")
+        self.credentials = Credentials()
+        self.db_access = DBAccess(self.credentials.username, self.credentials.password, self.credentials.host, self.credentials.host, self.credentials.database)
         self.db_access.connect()
-        self.ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")
+        self.ticket_manager = TicketManager(self.credentials.auth, self.credentials.app_token, self.credentials.api_url)
         self.toner_analyzer = TonerAnalyzer()
         self.blacklist = []
 
