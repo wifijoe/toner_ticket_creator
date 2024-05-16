@@ -160,13 +160,13 @@ class TicketManager:
         return response.json()
     
 
-#test TicketManager
+'''#test TicketManager
 ticket_manager = TicketManager("YW9uc3RvdHQ6Ym9ia2VlcHN0aW1lNzc=", "B2HA6LJIwSSLkVaGK4wQKdYFZbh5JBCh623wspMz", "https://pmsyglpi.byu.edu/apirest.php")  
 session_token = ticket_manager.get_session_token()
 #print(ticket_manager.search_tickets(session_token, "Yellow", "CANC"))
 #print(ticket_manager.create_ticket(session_token, "Test Ticket", "This is a test ticket", 1, 1))
 #print(ticket_manager.link_ticket(session_token, 784, 9))
 
-print(ticket_manager.search_closed_tickets(session_token, "Yellow", "CANC", ticket_manager.get_time_string(7)))
+print(ticket_manager.search_closed_tickets(session_token, "Yellow", "CANC", ticket_manager.get_time_string(7)))'''
 
         

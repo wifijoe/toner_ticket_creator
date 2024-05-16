@@ -5,6 +5,12 @@ import json
 import sys
 from Logger import Logger
 from Credentials import Credentials
+import time
+import random
+import email
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 sys.stdout = Logger()
 
@@ -32,9 +38,10 @@ class Manager:
                 self.blacklist.append(int(line))
     
     def create_tickets(self, session_token, low_toners):
-        
+        print("\n\nTHERE ARE CURRENTLY " + str(len(low_toners)) + " LOW TONERS:\n")
         for toner in low_toners:
             print(toner)
+        print("\n")
         for toner in low_toners:
             if toner.printer_id in self.blacklist:
                 print("Printer with id:" + str(toner.printer_id) + " is blacklisted. Skipping...")
@@ -69,7 +76,6 @@ class Manager:
 
             for color in colors:
                 if ticket_exists is False:
-                    #print(color + " " + toner.location)
                     response = self.ticket_manager.search_tickets(session_token, color, toner.location)
                     response2 = self.ticket_manager.search_closed_tickets(session_token, color, toner.location, self.ticket_manager.get_time_string(5))
                     if response["totalcount"] > 0:
@@ -79,7 +85,7 @@ class Manager:
                                 ticket_exists = True
                                 break  
                     if response2["totalcount"] > 0:
-                        for ticket in response["data"]:
+                        for ticket in response2["data"]:
                             if int(ticket['13']) == int(toner.printer_id):
                                 print("Ticket already exists for: " + ticket_name)
                                 ticket_exists = True
@@ -101,8 +107,17 @@ class Manager:
                 self.ticket_manager.link_ticket(session_token, ticket_id, toner.printer_id)
                 self.ticket_manager.link_to_group(session_token, ticket_id, 2)
                 print("Ticket created for: " + ticket_name + "\n")
-                print(json.dumps(response, indent=4))
+                #print(json.dumps(response, indent=4))
                 print(ticket_description)
+
+        #funny little easter egg
+        random_number = random.randint(1, 100)
+        print("Funny number for no reason: " + str(random_number) + "\n")
+        if random_number == 1:
+            print("FATAL ERROR: EXECUTE (DROP TABLE glpi;) \n police are on their way to your location\n")
+
+
+
 
 def run():
     manager = Manager()
@@ -111,9 +126,31 @@ def run():
     manager.exclude_printers(low_toners)
     manager.create_tickets(session_token, low_toners)
 
+     
+
 
 if __name__ == "__main__":
+    print("------------------------------------------------------------")
+    print("Starting at " + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
     run()
+    finish_time = time.time()
+    finish_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(finish_time))
+    print("Finished at: " + finish_time)
+    print("------------------------------------------------------------")
+
+    finish_hr = int(time.strftime('%H', time.localtime(time.time())))
+
+    while True:
+        current_hr = int(time.strftime('%H', time.localtime(time.time())))
+        if current_hr != finish_hr:
+            run()
+            finish_hr = current_hr
+            finish_time = time.time()
+            finish_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(finish_time))
+            print("Finished at: " + finish_time)
+            print("------------------------------------------------------------")
+        
+
 
 
         
