@@ -16,7 +16,7 @@ sys.stdout = Logger()
 
 
 class Manager:
-    def __init__(self):
+    def __init__(self): 
         self.credentials = Credentials()
         self.db_access = DBAccess(self.credentials.username, self.credentials.password, self.credentials.host, self.credentials.port, self.credentials.database)
         self.db_access.connect()
@@ -44,7 +44,7 @@ class Manager:
         print("\n")
         for toner in low_toners:
             if toner.printer_id in self.blacklist:
-                print("Printer with id:" + str(toner.printer_id) + " is blacklisted. Skipping...")
+                print("Printer with id:" + str(toner.printer_id) + " is blacklisted. Skipping...\n")
                 continue
             ticket_exists = False
             ticket_name = toner.get_color() + " Toner Low at: " + toner.location
@@ -114,7 +114,7 @@ class Manager:
         random_number = random.randint(1, 100)
         print("Funny number for no reason: " + str(random_number) + "\n")
         if random_number == 1:
-            print("FATAL ERROR: EXECUTE (DROP TABLE glpi;) \n police are on their way to your location\n")
+            print("FATAL ERROR: EXECUTING ----> DROP TABLE glpi;) \n police are on their way to your location\n")
 
 
 
@@ -143,14 +143,15 @@ if __name__ == "__main__":
     while True:
         current_hr = int(time.strftime('%H', time.localtime(time.time())))
         if current_hr != finish_hr:
+            print("Starting at " + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
             run()
             finish_hr = current_hr
             finish_time = time.time()
             finish_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(finish_time))
             print("Finished at: " + finish_time)
-            print("------------------------------------------------------------")
+            print("------------------------------------------------------------") 
         
-
+   
 
 
         
