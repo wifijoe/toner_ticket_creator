@@ -50,13 +50,3 @@ class TonerAnalyzer:
                 return None
             else:
                 return rows[0][0]
-
-#test
-'''toner_analyzer = TonerAnalyzer()
-cartridges = toner_analyzer.get_toner_levels()
-
-low_toners = toner_analyzer.find_low_toners(cartridges)
-for low_toner in low_toners:
-    print(low_toner)'''
-
-

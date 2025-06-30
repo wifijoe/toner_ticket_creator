@@ -23,7 +23,7 @@ class DBAccess:
     
     def get_location_id(self, complete_name):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT id FROM glpi_locations WHERE completename = ? AND entities_id = 1", (complete_name,))
+        cursor.execute("SELECT id FROM glpi_locations WHERE completename = ?", (complete_name,))
         rows = cursor.fetchall()
         if len(rows) == 0:
             print("Error: Location not found for: " + complete_name)
