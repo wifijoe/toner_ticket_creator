@@ -149,7 +149,7 @@ class Manager:
                 ticket_id = response["id"]
 
                 self.ticket_manager.link_ticket(session_token, ticket_id, toner.printer_id)
-                self.ticket_manager.link_to_group(session_token, ticket_id, 2)
+                #self.ticket_manager.link_to_group(session_token, ticket_id, 2)
                 print("Ticket created for: " + ticket_name + "\n")
                 #print(json.dumps(response, indent=4))
                 print(ticket_description)
